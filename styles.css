@@ -1,0 +1,56 @@
+.visa-sponsor-badge {
+  display: inline-block;
+  background-color: #059669;
+  /* Green-600 */
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  line-height: 1;
+  border: 1px solid #047857;
+  /* Green-700 */
+  transform: translateY(-1px);
+  z-index: 1000;
+}
+
+.visa-sponsor-badge:hover {
+  background-color: #047857;
+  cursor: help;
+}
+
+/* Tooltip container */
+.visa-sponsor-badge {
+  position: relative;
+}
+
+/* Tooltip text */
+.visa-sponsor-badge::after {
+  content: attr(data-original-name);
+  visibility: hidden;
+  width: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 8px;
+  position: absolute;
+  z-index: 1001;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  font-size: 12px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+/* Show the tooltip text when hovering */
+.visa-sponsor-badge:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
